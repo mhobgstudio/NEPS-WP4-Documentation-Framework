@@ -1,0 +1,26 @@
+@startuml WP4 NLQ Component Diagram
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+
+title NLQ Service — Component Diagram
+
+Container(nlq, "NLQ Service", "LangChain + FastAPI")
+
+System_Ext(llm, "LLM Provider", "OpenAI / Anthropic API")
+System_Ext(db, "Country Database", "PostgreSQL")
+
+Boundary(nlq_internal, "NLQ Service Internals") {
+    Component(router, "Query Router", "LangChain", "Routes natural-language queries to appropriate handlers")
+    Component(schema, "Schema Mapper", "SQLAlchemy", "Maps query intent to database schema")
+    Component(security, "Security Layer", "Python", "PII redaction, access control, query validation")
+    Component(cache, "Response Cache", "Redis", "Caches frequent queries for performance")
+}
+
+Rel(router, schema, "Resolves intent", "Internal")
+Rel(schema, db, "Executes query", "SQL")
+Rel(router, llm, "LLM calls", "HTTP")
+Rel(router, security, "Validates", "Internal")
+Rel(router, cache, "Checks cache", "Internal")
+
+@enduml

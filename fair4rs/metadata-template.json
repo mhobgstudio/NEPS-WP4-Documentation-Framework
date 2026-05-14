@@ -1,0 +1,49 @@
+{
+  "title": "NEPS WP4 Documentation Framework",
+  "description": "Five-layer composite documentation framework for the NEPS WP4 platform",
+  "identifier": {
+    "type": "DOI",
+    "value": "10.xxxx/wp4-docs-framework-v1"
+  },
+  "creators": [
+    {
+      "name": "Mohammed, Salamatu",
+      "role": "Documentation and Technical Writing Intern"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "NEPS WP4 Team",
+      "type": "ProjectTeam"
+    }
+  ],
+  "license": "CC-BY-4.0",
+  "version": "1.0.0",
+  "dateCreated": "2026-05-14",
+  "dateModified": "2026-05-14",
+  "keywords": [
+    "documentation",
+    "digital health",
+    "psychosocial monitoring",
+    "Diátaxis",
+    "Docs-as-Code",
+    "FAIR4RS"
+  ],
+  "resourceType": "DocumentationFramework",
+  "language": "en",
+  "funder": {
+    "name": "[Funder Organisation]",
+    "award": "[Grant Number]"
+  },
+  "relatedIdentifiers": [
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://github.com/neps-wp4/docs"
+    }
+  ],
+  "requirements": [
+    "Python ≥ 3.10",
+    "MkDocs",
+    "Vale (prose linter)"
+  ]
+}

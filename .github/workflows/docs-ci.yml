@@ -1,0 +1,46 @@
+name: Docs CI
+
+on:
+  pull_request:
+    paths:
+      - "docs/**"
+      - "adr/**"
+      - "model-cards/**"
+      - "datasheets/**"
+      - "mkdocs.yml"
+  push:
+    branches: [main]
+    paths:
+      - "docs/**"
+      - "adr/**"
+      - "model-cards/**"
+      - "datasheets/**"
+      - "mkdocs.yml"
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: |
+          pip install mkdocs mkdocs-material mkdocs-mermaid2-plugin
+          pip install markdownlint-cli2 codespell
+      - name: Markdown lint
+        run: markdownlint-cli2 "docs/**/*.md" "adr/**/*.md"
+      - name: Spell check
+        run: codespell docs/ adr/
+      - name: Build site
+        run: mkdocs build --strict
+
+  quality-score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Quality score
+        run: |
+          echo "Documentation quality scoring placeholder"
+          echo "Integrate rubric scoring logic here"

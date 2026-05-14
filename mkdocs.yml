@@ -1,0 +1,48 @@
+site_name: NEPS WP4 Documentation
+site_description: Multi-country youth psychosocial monitoring platform
+repo_url: https://github.com/neps-wp4/docs
+site_url: https://neps-wp4.github.io/docs
+
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: blue
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Tutorials:
+    - tutorials/index.md
+  - How-to Guides:
+    - how-to/index.md
+    - Setup a country site: how-to/setup-country-site.md
+  - Reference:
+    - reference/index.md
+    - API: reference/api/openapi.yaml
+    - Glossary: reference/glossary.md
+  - Explanation:
+    - explanation/index.md
+    - Architecture: explanation/architecture.md
+  - ADRs:
+    - adr/index.md
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true

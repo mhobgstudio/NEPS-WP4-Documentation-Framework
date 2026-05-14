@@ -1,0 +1,30 @@
+@startuml WP4 Container Diagram
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+LAYOUT_WITH_LEGEND()
+
+title WP4 Container Diagram
+
+Person(data_collector, "Data Collector", "Field staff")
+
+System_Boundary(wp4, "NEPS WP4 Platform") {
+    Container(web_app, "Web Application", "React", "Dashboard, risk analytics UI")
+    Container(api, "API Gateway", "FastAPI", "REST API for all platform access")
+    Container(etl, "ETL Pipeline", "Python", "Data ingestion and transformation")
+    Container(nlq, "NLQ Service", "LangChain + LLM", "Natural-language query layer")
+    Container(database, "Country Database", "PostgreSQL", "Longitudinal data storage")
+    Container(warehouse, "Data Warehouse", "ClickHouse", "Cross-country analytics")
+    Container(risk_engine, "Risk Engine", "Python/ML", "AI-assisted risk analytics")
+}
+
+Rel(data_collector, web_app, "Uses", "HTTPS")
+Rel(web_app, api, "API calls", "HTTPS")
+Rel(api, etl, "Triggers ingestion", "Internal")
+Rel(api, nlq, "Queries", "Internal")
+Rel(api, risk_engine, "Requests scoring", "Internal")
+Rel(etl, database, "Writes", "SQL")
+Rel(nlq, database, "Queries", "SQL")
+Rel(risk_engine, database, "Reads", "SQL")
+Rel(database, warehouse, "Replicates", "CDC")
+
+@enduml

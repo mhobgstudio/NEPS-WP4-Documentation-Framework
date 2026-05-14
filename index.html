@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>NEPS WP4 — Documentation Framework</title>
+<meta name="description" content="A five-layer composite documentation framework for multi-component digital health surveillance platforms">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='24' fill='%231e40af'/%3E%3Ctext x='96' y='132' text-anchor='middle' font-size='110' fill='white' font-family='sans-serif' font-weight='bold'%3EN%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#1e40af">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div id="app">
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-logo">N</span>
+      <span class="sidebar-title">NEPS WP4 Docs</span>
+      <button class="sidebar-close" id="sidebarClose">&times;</button>
+    </div>
+    <nav class="sidebar-nav" id="sidebarNav">
+      <a href="#home" class="nav-item active" data-route="home">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m0 0h4m-4 0V7a1 1 0 011-1h2a1 1 0 011 1v4m0 0v6a1 1 0 001 1h3a1 1 0 001-1v-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Dashboard
+      </a>
+      <a href="#paper" class="nav-item" data-route="paper">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Paper
+      </a>
+      <div class="nav-label">Framework Layers</div>
+      <a href="#layer-1" class="nav-item" data-route="layer-1">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M19 9l-7 5-7-5 7-5 7 5z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 14l7 5 7-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        Info Architecture
+      </a>
+      <a href="#layer-2" class="nav-item" data-route="layer-2">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        Quality
+      </a>
+      <a href="#layer-3" class="nav-item" data-route="layer-3">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 5v14a1 1 0 001 1h14a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 9h8M8 13h6M8 17h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Docs-as-Code
+      </a>
+      <a href="#layer-4" class="nav-item" data-route="layer-4">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M8 7h8m-8 4h5m-5 4h3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        Architecture
+      </a>
+      <a href="#layer-5" class="nav-item" data-route="layer-5">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M13 10V3L4 14h7v7l9-11h-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Sustainability & AI
+      </a>
+      <div class="nav-label">Execution</div>
+      <a href="#roadmap" class="nav-item" data-route="roadmap">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Roadmap
+      </a>
+      <a href="#gaps" class="nav-item" data-route="gaps">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Research Gaps
+      </a>
+      <div class="nav-separator"></div>
+      <a href="#guide" class="nav-item" data-route="guide">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Guide
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <span class="sidebar-version">v1.0.0</span>
+      <span class="sidebar-date">May 2026</span>
+    </div>
+  </aside>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <main id="main">
+    <header class="topbar">
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <span class="topbar-title" id="topbarTitle">Dashboard</span>
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" width="16" height="16" class="search-icon"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input type="search" id="searchInput" placeholder="Search..." aria-label="Search documentation content">
+      </div>
+      <button class="theme-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle dark/light theme">
+        <svg viewBox="0 0 24 24" width="20" height="20" id="themeIcon"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" fill="currentColor"/></svg>
+      </button>
+    </header>
+
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+    </div>
+
+    <div class="content" id="content"></div>
+
+    <footer class="app-footer">
+      <p>NEPS WP4 &middot; Salamatu Mohammed &middot; May 2026</p>
+      <p>Five-Layer Composite Documentation Framework</p>
+    </footer>
+  </main>
+</div>
+
+<div class="install-banner" id="installBanner">
+  <p>Install this documentation portal for offline access</p>
+  <button class="install-btn" id="installBtn">Install</button>
+  <button class="install-close" id="installClose">&times;</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+@startuml WP4 System Context
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+LAYOUT_WITH_LEGEND()
+
+title WP4 System Context
+
+Person(data_collector, "Data Collector", "Collects survey and interview data in the field")
+Person(clinician, "Clinician", "Reviews risk assessments and patient history")
+Person(researcher, "Researcher", "Analyses longitudinal trends across countries")
+Person(admin, "Country Admin", "Manages local site configuration and user access")
+
+System(wp4, "NEPS WP4 Platform", "Multi-country digital platform for longitudinal youth psychosocial monitoring")
+
+System_Ext(school_db, "School Records", "External school survey data sources")
+System_Ext(clinic_db, "Clinic Systems", "External clinical record systems")
+
+Rel(data_collector, wp4, "Submits field data", "HTTPS")
+Rel(clinician, wp4, "Reviews dashboards and risk scores", "HTTPS")
+Rel(researcher, wp4, "Runs cross-country queries", "HTTPS")
+Rel(admin, wp4, "Configures site settings", "HTTPS")
+Rel(school_db, wp4, "Ingests survey data", "ETL")
+Rel(clinic_db, wp4, "Ingests clinical records", "ETL")
+
+@enduml

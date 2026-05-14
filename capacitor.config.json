@@ -1,0 +1,28 @@
+{
+  "appId": "org.neps.wp4.docs",
+  "appName": "NEPS WP4 Docs",
+  "webDir": ".",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "allowMixedContent": false,
+    "captureInput": true,
+    "backgroundColor": "#f8fafc",
+    "buildOptions": {
+      "keystorePath": null
+    }
+  },
+  "ios": {
+    "contentInset": "always",
+    "backgroundColor": "#f8fafc",
+    "preferredContentMode": "mobile"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#1e40af"
+    }
+  }
+}
