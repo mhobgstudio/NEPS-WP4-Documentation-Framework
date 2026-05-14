@@ -2,6 +2,11 @@
 
 > A five-layer composite documentation framework for the NEPS WP4 digital health surveillance platform.
 
+[![Deploy](https://github.com/mhobgstudio/NEPS-WP4-Documentation-Framework/actions/workflows/deploy.yml/badge.svg)](https://github.com/mhobgstudio/NEPS-WP4-Documentation-Framework/actions/workflows/deploy.yml)
+[![Site](https://img.shields.io/badge/site-github.io-blue)](https://mhobgstudio.github.io/NEPS-WP4-Documentation-Framework)
+
+**Live site:** https://mhobgstudio.github.io/NEPS-WP4-Documentation-Framework
+
 ## Layers
 
 | # | Layer | Source | Purpose |

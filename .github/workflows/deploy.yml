@@ -23,12 +23,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v4
-      - name: Build PWA
+      - name: Build site
         run: |
           mkdir -p _site
-          cp -r index.html app.css app.js manifest.json sw.js icon-*.svg _site/
-          mkdir -p _site/docs _site/adr
+          cp index.html app.css app.js manifest.json sw.js icon-*.svg _site/
           cp -r docs adr model-cards datasheets quality fair4rs onboarding audit _site/ 2>/dev/null || true
+          rm -f _site/docs/tutorials/.gitkeep _site/docs/reference/api/.gitkeep
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

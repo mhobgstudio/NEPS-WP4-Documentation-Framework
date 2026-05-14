@@ -1,7 +1,7 @@
 site_name: NEPS WP4 Documentation
 site_description: Multi-country youth psychosocial monitoring platform
-repo_url: https://github.com/neps-wp4/docs
-site_url: https://neps-wp4.github.io/docs
+repo_url: https://github.com/mhobgstudio/NEPS-WP4-Documentation-Framework
+site_url: https://mhobgstudio.github.io/NEPS-WP4-Documentation-Framework
 
 theme:
   name: material
